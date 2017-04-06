@@ -34,19 +34,18 @@ class PostController extends Controller
     }
 
     public function store(Request $request) {
-        $this->validate($request, [
-            'title' => 'required',
-            'slug' => 'required',
-            'content' => 'required'
-        ]);
-
-        $post = new Post;
-
-        $post->title = $request->title;
-        $post->slug = $request->slug;
-        $post->content = $request->content;
-
+      app()->setLocale('en');
+        $post = new Post();
+        $post->title = $request->titleen;
+        $post->content = $request->contenten;
         $post->save();
+
+        app()->setLocale('id');
+
+        $post->title = $request->titleid;
+        $post->content = $request->contentid;
+        $post->save();
+        
         return redirect()->route('post.index');
     }
 }

@@ -5,27 +5,29 @@
         <div class="col-md-12">
             <div class="col-md-10 col-md-offset-1">
             <form action="{{route('post.store')}}" method="post">
-            <h2>{{trans('app.language')}}</h2>
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
                 <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" name="title" class="form-control">
+                    <label for="titleen">Title (English)</label>
+                    <input type="text" name="titleen" class="form-control" required>
+                </div>
+                 <div class="form-group">
+                    <label for="titleid">Title (INDONESIAN)</label>
+                    <input type="text" name="titleid" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="slug">Slug</label>
-                    <input type="text" name="slug" class="form-control">
+                    <label for="slug">Slug(ENGLISH)</label>
+                    <input type="text" name="slug" class="form-control" required>
+                </div>
+                 <div class="form-group">
+                    <label for="slugid">Slug (INDONESIAN)</label>
+                    <input type="text" name="slugid" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="content">Content</label>
-                    <textarea name="content" class="form-control"></textarea>
+                    <label for="contenten">Content (ENGLISH)</label>
+                    <textarea name="contenten" class="form-control" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="contentid">Content (INDONESIAN)</label>
+                    <textarea name="contentid" class="form-control" required></textarea>
                 </div>
 
                 

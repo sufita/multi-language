@@ -12,6 +12,7 @@ class Post extends Model
     public $translatedAttributes = ['title', 'slug', 'content'];
 
     protected $fillable = ['title', 'slug', 'content'];
+    
 
    
 }
